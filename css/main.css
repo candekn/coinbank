@@ -1,0 +1,44 @@
+.btn-link{
+    color: #f4f5f1 !important;
+}
+.card-header{
+    padding-bottom: 50px !important;
+}
+.chch{
+    padding-bottom: 155px!important;
+}
+label{
+    color: #02b4ff;
+}
+.container-fluid{
+    background-image: url("../img/descarga.png") !important;
+    height: 690px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+img{
+    height: 140px;
+}
+#perfil{
+    height: 100px !important;
+}
+#na{
+    font-size: 13px;
+}
+.salir{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 3px !important;
+}
+
+.linkconsulta{
+    margin: 10px;
+}
+.updown{
+    width: 60px !important;
+    height: 60px !important;
+}
+td{
+    width: 5px!important;
+}

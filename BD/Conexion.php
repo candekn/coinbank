@@ -88,4 +88,22 @@ class Conexion
         return $consulta;
     }
 
+
+    public function realizarCompra($idC,$cantidad,$tipoCr)
+    {
+        $arrayW=$this->consultarWallet($idC);
+        $cantidadtotal=$arrayW['cantidad'];
+        $cantidadtotal=$cantidadtotal+$cantidad;
+        $consulta=$this->msq->prepare("UPDATE Wallets SET cantidad=? WHERE idCliente=? AND tipo=?");
+        $consulta->bind_param("iis",$cantidadtotal,$idC,$tipoCr);
+        $consulta->execute();
+        $consulta->store_result();
+
+        $num=$consulta->affected_rows;
+        if($num>0){
+            return "La compra se ha realizado exitosamente";
+        }else{
+            return "La compra ha fallado";
+        }
+    }
 }

@@ -33,23 +33,43 @@ $logoC=$cripto["logo"];
                             <td><?php echo $t['nombre']; ?></td>
                             <td><?php echo $t['numeroTarjeta']; ?></td>
                             <td><input name="tarjetadecred"<?php echo "value='$t[numeroTarjeta]'" ?>
-                                       type='radio'></td>
+                                       type='radio' required></td>
                         </tr>
                     <?php } ?>
                 </table>
-                <div class="form-group">
+                <div class="form-group justify-content-center">
                     <label>Ingrese cantidad de <?php echo $nombreC ?> a comprar: </label>
                     <input class="form-control" style="max-width:300px" type="number"
-                    name="cantidad">
+                    name="cantidad" id="cantidadc"required>
                 </div>
-                <input type="number" step="any" name="precio" style="display: none" <?php echo "value='$precioC'"
+                    <table class="table">
+                        <tr>
+                            <td>Precio Unitario: </td>
+                            <?php echo"<td>USD$$precioC</td>";?>
+                        </tr>
+                        <tr>
+                            <td>Comisión CoinBank (0.001%): </td>
+                            <td id="comision"></td>
+                        </tr>
+                        <tr>
+                            <td>Total: </td>
+                            <td id="total"></td>
+
+                        </tr>
+                    </table>
+
+                <input type="number" step="any" name="precio" id="precioc" style="display:
+                none"
+                <?php
+                echo "value='$precioC'"
                 ?> >
                 <input type="text" name="nombrec" style="display: none" <?php echo "value='$nombreC'"
                 ?> >
+
+
                 <div class="form-group row justify-content-center">
                     <button type="submit" class="btn btn-primary"
-                            style="max-width: 200px; margin: 10px">Vista previa de
-                        compra</button>
+                            style="max-width: 200px; margin: 10px">Confirmar compra</button>
                     <a href="consulta.php" class="btn btn-primary" style="max-width:
                     200px; margin: 10px">
                         Cancelar compra</a>
@@ -59,4 +79,6 @@ $logoC=$cripto["logo"];
         </div>
     </div>
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/codejq.js"></script>
 </html>

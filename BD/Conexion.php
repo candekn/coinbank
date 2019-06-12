@@ -106,4 +106,26 @@ class Conexion
             return "La compra ha fallado";
         }
     }
+
+    public function realizarVenta($idc,$cantidad,$tipoCr)
+    {
+        $arraW=$this->consultarWallet($idc);
+        $cantidadtotal=$arraW['cantidad'];
+        $cantidadtotal=$cantidadtotal-$cantidad;
+        $consulta=$this->msq->prepare("UPDATE Wallets SET cantidad=? WHERE idCliente=? AND tipo=?");
+        $consulta->bind_param("iss",$cantidadtotal,$idc,$tipoCr);
+        $consulta->execute();
+        $consulta->store_result();
+        $num=$consulta->affected_rows;
+        if($num>0){
+            return "La venta se ha realizado exitosamente";
+        }else{
+            return "La venta ha fallado";
+        }
+    }
+    public function consultarCuenta($idC){
+        $consulta=$this->msq->query("SELECT id, alias, email FROM CuentasRetiro WHERE idCliente=$idC");
+        return $consulta;
+    }
+
 }

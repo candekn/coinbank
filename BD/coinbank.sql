@@ -55,6 +55,7 @@ id int auto_increment,
 nombre varchar(100) not null,
 urlDeApi varchar(200) not null,
 precio double not null,
+logo varchar(100),
 primary key (id)
 );
 
@@ -78,8 +79,8 @@ VALUES ("Cuenta PayPal1","nicomg@gmail.com", 11);
 INSERT INTO Wallets(id, cantidad, tipo, codigo, idCliente)
 VALUES (1,10,"PataConde","23AX85F0156PC02",11);
 
-INSERT INTO Criptomoneda(id, nombre,precio,urlDeApi)
-VALUES (111,"PataConde", 1250.00, "https://www.chainCoin.com/PataConde"),
-	   (222,"Bitcoin", 7983.38,"https://www.chainCoin.com/Bitcoin");
+INSERT INTO Criptomoneda(id, nombre,precio,urlDeApi,logo)
+VALUES (111,"PataConde", 1250.00, "https://www.chainCoin.com/PataConde","pataconde.png"),
+	   (222,"Bitcoin", 7983.38,"https://www.chainCoin.com/Bitcoin",null);
 INSERT INTO WalletsCriptomonedas(idWallets,idCriptomoneda)
 VALUES (1,111);

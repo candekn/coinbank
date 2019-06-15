@@ -7,7 +7,7 @@
             var cantidad= $("#cantidadc").val();
             var precioc= $("#precioc").val();
             var total = precioc*cantidad
-            var comision = total*0.001;
+            var comision = total*0.01;
             total = total+comision;
             $("#comision").text("USD$"+comision);
             $("#total").text("USD$"+total);
@@ -16,7 +16,7 @@
             var cantidad= $("#cantidadcv").val();
             var precioc= $("#precioc").val();
             var total = precioc*cantidad
-            var comision = total*0.001;
+            var comision = total*0.01;
             total = total-comision;
             $("#comision").text("- USD$"+comision);
             $("#totalv").text("+USD$"+total);

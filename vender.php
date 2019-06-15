@@ -53,7 +53,7 @@ $logoC = $cripto["logo"];; ?>
                         <?php echo"<td>USD$$precioC</td>";?>
                     </tr>
                     <tr>
-                        <td>Comisión CoinBank (0.001%): </td>
+                        <td>Comisión CoinBank (0.01%): </td>
                         <td id="comision"></td>
                     </tr>
                     <tr>

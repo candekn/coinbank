@@ -95,7 +95,7 @@ class Conexion
         $cantidadtotal=$arrayW['cantidad'];
         $cantidadtotal=$cantidadtotal+$cantidad;
         $consulta=$this->msq->prepare("UPDATE Wallets SET cantidad=? WHERE idCliente=? AND tipo=?");
-        $consulta->bind_param("iis",$cantidadtotal,$idC,$tipoCr);
+        $consulta->bind_param("dis",$cantidadtotal,$idC,$tipoCr);
         $consulta->execute();
         $consulta->store_result();
 
@@ -113,7 +113,7 @@ class Conexion
         $cantidadtotal=$arraW['cantidad'];
         $cantidadtotal=$cantidadtotal-$cantidad;
         $consulta=$this->msq->prepare("UPDATE Wallets SET cantidad=? WHERE idCliente=? AND tipo=?");
-        $consulta->bind_param("iss",$cantidadtotal,$idc,$tipoCr);
+        $consulta->bind_param("dss",$cantidadtotal,$idc,$tipoCr);
         $consulta->execute();
         $consulta->store_result();
         $num=$consulta->affected_rows;
@@ -127,5 +127,22 @@ class Conexion
         $consulta=$this->msq->query("SELECT id, alias, email FROM CuentasRetiro WHERE idCliente=$idC");
         return $consulta;
     }
+
+   public function realizarTranferencia($idc,$cantidad,$tipoCr,$cuentaT){
+       $arraW=$this->consultarWallet($idc);
+       $cantidadtotal=$arraW['cantidad'];
+       $cantidadtotal=$cantidadtotal-$cantidad;
+       $consulta=$this->msq->prepare("UPDATE Wallets SET cantidad=? WHERE idCliente=? AND tipo=?");
+       $consulta->bind_param("dss",$cantidadtotal,$idc,$tipoCr);
+       $consulta->execute();
+       $consulta->store_result();
+       $num=$consulta->affected_rows;
+       if($num>0){
+           return "La tranferencia a la cuenta $cuentaT se ha realizado exitosamente";
+       }else{
+           return "La tranferencia a la cuenta $cuentaT ha fallado";
+       }
+   }
+
 
 }

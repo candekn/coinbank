@@ -42,17 +42,14 @@
                             style="max-width: 200px; margin: auto; margin-bottom:
                             10px">Ingresar</button>
 
-                    <button type="reset" class="btn btn-primary btn-block" style="max-width:
-                     200px; margin: auto">Cancelar</button>
+                    <a href="Index.php" class="btn btn-primary btn-block" style="max-width:
+                     200px; margin: auto">Cancelar</a>
                 </div>
             </form>
         </div> <!--cardbody-->
     </div> <!--card-->
+
 </div>
-
-
-
-
 
 </body>
 </html>

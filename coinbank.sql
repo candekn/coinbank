@@ -42,7 +42,7 @@ foreign key (idCliente) references Cliente(id)
 
 CREATE TABLE Wallets(
 id int auto_increment,
-cantidad int not null,
+cantidad double not null,
 tipo varchar(100) not null,
 codigo varchar(120) not null,
 idCliente int,
@@ -78,7 +78,7 @@ INSERT INTO CuentasRetiro(alias,email,idCliente)
 VALUES ("Cuenta PayPal1","nicomg@gmail.com", 11);
 
 INSERT INTO Wallets(id, cantidad, tipo, codigo, idCliente)
-VALUES (1,10,"PataConde","23AX85F0156PC02",11);
+VALUES (1,10.0,"PataConde","23AX85F0156PC02",11);
 
 INSERT INTO Criptomoneda(id, nombre,precio,urlDeApi, logo)
 VALUES (111,"PataConde", 1250.00, "https://www.chainCoin.com/PataConde", "pataconde.png"),

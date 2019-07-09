@@ -2,7 +2,7 @@
 require_once("header.php");
 $idc = $_GET["idc"] ? $_GET["idc"] : null;
 if (!(isset($idc))) {
-    header("location:Index.php?button='registrar'");
+    header("location:Index.php?button='ingresar'");
     exit();
 } else {
     require_once("BD/Conexion.php");
@@ -39,8 +39,9 @@ $logoC = $cripto["logo"];; ?>
                 </table>
                 <div class="form-group justify-content-center">
                     <label>Ingrese cantidad de <?php echo $nombreC ?> a vender: </label>
-                    <input class="form-control" style="max-width:300px" type="number"
-                           name="cantidad" id="cantidadcv" max="<?php echo $cwallet; ?>"
+                    <input class="form-control" style="max-width:300px" type="number" step="any"
+                           name="cantidad" id="cantidadcv" min="0.0" max="<?php echo
+                    $cwallet; ?>"
                            required>
                 </div>
                 <table class="table">

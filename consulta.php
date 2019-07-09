@@ -21,7 +21,7 @@ require("consultaDeCrypto.php");
         <div class="row justify-content-center">
             <?php echo "<a class='btn btn-primary btn-link linkconsulta' href='comprar.php?idc=$idC'>Comprar</a>
             <a class='btn btn-primary btn-link linkconsulta' href='vender.php?idc=$idC'>Vender</a>
-            <a class='btn btn-primary btn-link linkconsulta' href='#'>Transferir</a>" ?>
+            <a class='btn btn-primary btn-link linkconsulta' href='transferir.php?idc=$idC'>Transferir</a>" ?>
         </div>
         <div class="table-responsive-sm">
             <table class="table">

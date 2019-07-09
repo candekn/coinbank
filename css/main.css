@@ -1,3 +1,12 @@
+body{
+    max-height: 110vh;
+}
+/* LOGIN Y REGISTRO  */
+.formIndex{
+    position: relative;
+    top: -700px;
+}
+
 .btn-link{
     color: #f4f5f1 !important;
 }

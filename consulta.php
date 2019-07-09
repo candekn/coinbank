@@ -1,8 +1,10 @@
 <?php
 require_once("header.php");
 require_once("BD/Conexion.php");
+
 $conec= new Conexion();
-$id=$_SESSION["id"];
+$id = $_SESSION["id"]; // id será usado en consultaDeCrypto que retorna el idCripto
+
 require("consultaDeCrypto.php");
 
 ?>

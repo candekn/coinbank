@@ -1,8 +1,9 @@
 <?php
 session_start();
-$nombre=$_SESSION["nombre"]?$_SESSION["nombre"]:null;
+$nombre = $_SESSION["nombre"] ? $_SESSION["nombre"] : null;
+
 if(!(isset($nombre))){
-    header("location:Index.php?button='registrar'");
+    header("location:index.php?button='registrar'");
     exit();
 }else{
     $apellido=$_SESSION["apellido"];

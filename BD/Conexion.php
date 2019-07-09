@@ -128,4 +128,25 @@ class Conexion
         return $consulta;
     }
 
+    public function registrarUsuario($nombre, $apellido, $email, $telefono, $direccion, $pass, $dni, $dniFrente){
+        $insertCliente = "INSERT INTO Cliente (nombre, apellido, email, telefono, direccion, pass, dni, dniFrente)";
+        $insertCliente .= " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        try{
+            $queryInsert = $this->msq->prepare($insertCliente);
+            $queryInsert->bind_param("iis", $nombre, $apellido, $email, $telefono, $direccion, $pass, $dni, $dniFrente);
+            $queryInsert->execute();
+            
+            if($queryInsert->affected_rows() > 0){
+                echo json_encode(["resp" => "registro exitoso"]);
+            } else {
+                echo json_encode(["resp" => "error"]);
+            }
+
+        } catch (Exception $e){
+            echo json_encode(["error" => $e]);
+        }
+
+    }
+
 }

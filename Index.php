@@ -44,17 +44,12 @@
                             style="max-width: 200px; margin: auto; margin-bottom:
                             10px">Ingresar</button>
 
-<<<<<<< HEAD
                     <a href="/coinbank/index.php" class="btn btn-primary btn-block" style="max-width:
-=======
-                    <a href="Index.php" class="btn btn-primary btn-block" style="max-width:
->>>>>>> 6b0a989fb6f2de2672485b6f1b55bcfd8888cdd4
                      200px; margin: auto">Cancelar</a>
                 </div>
             </form>
         </div> <!--cardbody-->
     </div> <!--card-->
-<<<<<<< HEAD
 </div>
 
 <!-- Registro -->
@@ -168,10 +163,6 @@
                         <button id="submitButton" type="button" class="btn btn-primary btn-block"
                                 style="max-width: 200px; margin: auto; margin-bottom:
                                 10px">Registrarse</button>
-=======
-
-</div>
->>>>>>> 6b0a989fb6f2de2672485b6f1b55bcfd8888cdd4
 
                         <button type="reset" class="btn btn-primary btn-block prev" style="max-width:
                         200px; margin: 2% auto 2% auto">Atrás</button>

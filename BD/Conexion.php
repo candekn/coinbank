@@ -123,12 +123,12 @@ class Conexion
             return "La venta ha fallado";
         }
     }
+    
     public function consultarCuenta($idC){
         $consulta=$this->msq->query("SELECT id, alias, email FROM CuentasRetiro WHERE idCliente=$idC");
         return $consulta;
     }
 
-<<<<<<< HEAD
     public function registrarUsuario($nombre, $apellido, $email, $telefono, $direccion, $pass, $dni, $dniFrente){
         $insertCliente = "INSERT INTO Cliente (nombre, apellido, email, telefono, direccion, pass, dni, dniFrente)";
         $insertCliente .= " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -149,8 +149,8 @@ class Conexion
         }
 
     }
-=======
-   public function realizarTranferencia($idc,$cantidad,$tipoCr,$cuentaT){
+
+    public function realizarTranferencia($idc,$cantidad,$tipoCr,$cuentaT){
        $arraW=$this->consultarWallet($idc);
        $cantidadtotal=$arraW['cantidad'];
        $cantidadtotal=$cantidadtotal-$cantidad;
@@ -159,6 +159,7 @@ class Conexion
        $consulta->execute();
        $consulta->store_result();
        $num=$consulta->affected_rows;
+
        if($num>0){
            return "La tranferencia a la cuenta $cuentaT se ha realizado exitosamente";
        }else{
@@ -166,6 +167,5 @@ class Conexion
        }
    }
 
->>>>>>> 6b0a989fb6f2de2672485b6f1b55bcfd8888cdd4
 
 }
